@@ -1,0 +1,8 @@
+/* src/styles/Home.module.css */
+
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #181818;
+  }
+  
