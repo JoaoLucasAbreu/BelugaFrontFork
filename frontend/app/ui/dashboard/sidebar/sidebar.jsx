@@ -80,6 +80,19 @@ const menuItems = [
 const Sidebar = async () => {
   return (
     <div className={styles.container}>
+      <div className={styles.beluga}>
+        <Image
+          className={styles.belugaImage}
+          src={"/beluga-white 1.png"}
+          alt=""
+          width="60"
+          height="50"
+        />
+        <div className={styles.belugaDetail}>
+          <span className={styles.belugaName}>BELUGA</span>
+        </div>
+      </div>
+
       <div className={styles.user}>
         <Image
           className={styles.userImage}
@@ -114,6 +127,7 @@ const Sidebar = async () => {
           Logout
         </button>
       </form>
+
     </div>
   );
 };
