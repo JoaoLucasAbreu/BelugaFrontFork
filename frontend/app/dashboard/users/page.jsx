@@ -12,10 +12,20 @@ const CopyBlock = ({ title, content }) => {
   };
 
   return (
-    <div style={{ border: '1px solid #ccc', padding: '16px', marginBottom: '10px' }}>
-      <h3>{title}</h3>
+    <div style={{ border: '1px solid #ccc', padding: '16px', marginBottom: '20px', borderRadius: '8px' }}>
+      <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#ADD8E6', marginBottom: '12px' }}>{title}</h3>
       <p>{content}</p>
-      <button onClick={copyToClipboard}>
+      <button 
+        onClick={copyToClipboard} 
+        style={{ 
+          padding: '8px 16px', 
+          borderRadius: '20px', 
+          backgroundColor: 'transparent', 
+          border: '1px solid #333', 
+          cursor: 'pointer', 
+          color: '#ADD8E6' 
+        }}
+      >
         {copied ? 'Copied!' : 'Copy'}
       </button>
     </div>
