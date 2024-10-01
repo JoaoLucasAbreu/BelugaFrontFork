@@ -4,7 +4,6 @@ import styles from "./sidebar.module.css";
 import {
   MdDashboard,
   MdSupervisedUserCircle,
-  MdShoppingBag,
   MdAttachMoney,
   MdWork,
   MdAnalytics,
@@ -12,6 +11,8 @@ import {
   MdOutlineSettings,
   MdHelpCenter,
   MdLogout,
+  MdKey,
+  MdLibraryBooks
 } from "react-icons/md";
 
 const menuItems = [
@@ -24,14 +25,14 @@ const menuItems = [
         icon: <MdDashboard />,
       },
       {
-        title: "Documentação",
-        path: "/dashboard/users",
-        icon: <MdSupervisedUserCircle />,
+        title: "API",
+        path: "/dashboard/api",
+        icon: <MdLibraryBooks />,
       },
       {
-        title: "Products",
-        path: "/dashboard/products",
-        icon: <MdShoppingBag />,
+        title: "Chaves",
+        path: "/dashboard/chaves",
+        icon: <MdKey />,
       },
       {
         title: "Transactions",

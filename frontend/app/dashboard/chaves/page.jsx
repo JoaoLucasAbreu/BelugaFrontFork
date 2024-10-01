@@ -52,30 +52,33 @@ export default function KeyManager() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1 style={{ color: '#fff', marginBottom: '20px' }}>Gerenciamento de Chaves</h1>
-      {keys.map((keyItem, index) => (
-        <KeyItem
-          key={index}
-          keyItem={keyItem}
-          onDelete={() => deleteKey(index)}
-          onToggleVisibility={() => toggleVisibility(index)}
-        />
-      ))}
-      <button 
-        onClick={addKey} 
-        style={{ 
-          padding: '10px 20px', 
-          borderRadius: '8px', 
-          backgroundColor: '#00d1b2', 
-          border: 'none', 
-          cursor: 'pointer', 
-          color: '#fff', 
-          marginTop: '20px' 
-        }}
-      >
-        + Adicionar Chave De Acesso
-      </button>
+    <div style={{padding: '14px 0px'}}>
+      <div style={{backgroundColor: '#182237' , padding: '20px', borderRadius: '10px'}}>
+        
+          <h1 style={{ marginBottom: '30px' , padding: '20px 2px'}}>Gerenciamento de Chaves</h1>
+          {keys.map((keyItem, index) => (
+            <KeyItem
+              key={index}
+              keyItem={keyItem}
+              onDelete={() => deleteKey(index)}
+              onToggleVisibility={() => toggleVisibility(index)}
+            />
+          ))}
+          <button 
+            onClick={addKey} 
+            style={{ 
+              padding: '10px 20px', 
+              borderRadius: '8px', 
+              backgroundColor: '#00d1b2', 
+              border: 'none', 
+              cursor: 'pointer', 
+              color: '#fff', 
+              marginTop: '20px' 
+            }}
+          >
+            + Adicionar Chave De Acesso
+          </button>
+        </div>
     </div>
   );
 }
