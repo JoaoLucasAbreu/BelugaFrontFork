@@ -33,6 +33,7 @@
   .notification {
     font-weight: 200;
     color: var(--textSoft);
+    display: inline-block;
   }
   
   .subtitle {
@@ -58,3 +59,57 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .viewAll {
+    font-size: 0.8rem;
+    text-decoration: none;
+    float: right;
+    padding: 4px 0px 0px 0px;
+  }
+
+
+.userList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.userItem {
+  display: flex;
+  align-items: center;
+  background-color: #2f3a53;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.userImageContainer {
+  border-radius: 20%;
+  padding: 1px 1px 0px 1px;
+  background: #142346;
+}
+
+.userImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 20%;
+}
+
+.userName {
+  flex-grow: 1;
+  margin-left: 15px;
+  font-size: 1rem;
+}
+
+.userAction {
+  background-color: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.userAction:hover {
+  color: #fff;
+}
