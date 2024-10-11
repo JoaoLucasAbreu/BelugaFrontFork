@@ -4,18 +4,18 @@ import styles from './chart.module.css'
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ComposedChart } from 'recharts';
 
 const data = [
-  { name: 'Jan', Gastos: 49998, Minutos: 4503.31},
-  { name: 'Fev', Gastos: 43120, Minutos: 3902.12 },
-  { name: 'Mar', Gastos: 37145, Minutos: 3100.56 },
-  { name: 'Abr', Gastos: 29143, Minutos: 2340.30 },
-  { name: 'Mai', Gastos: 23180, Minutos: 1840.97 },
-  { name: 'Jun', Gastos: 27902, Minutos: 2003.13 },
-  { name: 'Jul', Gastos: 36955, Minutos: 3992.12 },
-  { name: 'Ago', Gastos: 20, Minutos: 80 },
-  { name: 'Set', Gastos: 35, Minutos: 85 },
-  { name: 'Out', Gastos: 45, Minutos: 90 },
-  { name: 'Nov', Gastos: 50, Minutos: 110 },
-  { name: 'Dez', Gastos: 35, Minutos: 95 },
+  { name: 'Jan', Gastos: 4503.31, Minutos: 49998},
+  { name: 'Fev', Gastos: 3902.12, Minutos: 43120},
+  { name: 'Mar', Gastos: 3100.56, Minutos: 37145},
+  { name: 'Abr', Gastos: 2340.30, Minutos: 29143},
+  { name: 'Mai', Gastos: 1840.97, Minutos: 23180},
+  { name: 'Jun', Gastos: 2003.13, Minutos: 27902},
+  { name: 'Jul', Gastos: 3992.12, Minutos: 36955},
+  { name: 'Ago', Gastos: 1899, Minutos: 21023 },
+  { name: 'Set', Gastos: 2031, Minutos: 24023},
+  { name: 'Out', Gastos: 1975, Minutos: 20099 },
+  { name: 'Nov', Gastos: 1922.50, Minutos: 20342 },
+  { name: 'Dez', Gastos: 4692.12, Minutos: 50998 },
 ];
 
 const Chart = () => {
@@ -23,8 +23,8 @@ const Chart = () => {
     <div className={styles.container}>
       <h2 className={styles.title}>Gastos por Minutos traduzidos</h2>
       <div>
-      <p className={styles.bigNumber}>Total Gasto: <b>500K</b></p>
-      <p className={styles.bigNumber}>Minutos Traduzidos: <b>460</b></p>
+      <p className={styles.bigNumber}>Total Gasto: <b>$ 34.200</b></p>
+      <p className={styles.bigNumber}>Minutos Traduzidos: <b>383.928</b></p>
       
       </div>
       <ResponsiveContainer width="100%" height={392}>

@@ -1,14 +1,18 @@
 .container {
-    background-color: var(--bgSoft);
-    padding: 20px;
-    border-radius: 10px;
     display: flex;
-    gap: 20px;
-    cursor: pointer;
     width: 100%;
+    gap: 20px;
+  }
+
+.item {
+    background-color: var(--bgSoft);
+    padding: 22px;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
   }
   
-  .container:hover{
+  .item:hover{
     background-color: #2e374a;
   }
   
@@ -16,6 +20,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 1px;
   }
   
   .number {
