@@ -27,11 +27,7 @@ const Rightbar = () => {
       </div>
       <div className={styles.item}>
         <div className={styles.text}>
-          <span className={styles.notification}>🚀 Coming Soon</span>
-          <h3 className={styles.title}>
-            New server actions are available, partial pre-rendering is coming
-            up!
-          </h3>
+          <span className={styles.notification}>Usuários Beluga Assist:</span>
           <span className={styles.subtitle}>Boost your productivity</span>
           <p className={styles.desc}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.

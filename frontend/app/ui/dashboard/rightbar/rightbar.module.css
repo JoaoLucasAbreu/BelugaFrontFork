@@ -31,7 +31,8 @@
   }
   
   .notification {
-    font-weight: bold;
+    font-weight: 200;
+    color: var(--textSoft);
   }
   
   .subtitle {

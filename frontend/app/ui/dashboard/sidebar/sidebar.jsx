@@ -3,7 +3,7 @@ import MenuLink from "./menuLink/menuLink";
 import styles from "./sidebar.module.css";
 import {
   MdDashboard,
-  MdSupervisedUserCircle,
+  MdOutlineVideoLibrary ,
   MdAttachMoney,
   MdWork,
   MdAnalytics,
@@ -35,9 +35,9 @@ const menuItems = [
         icon: <MdKey />,
       },
       {
-        title: "Transactions",
-        path: "/dashboard/transactions",
-        icon: <MdAttachMoney />,
+        title: "WebPlayer",
+        path: "/dashboard/webplayer",
+        icon: <MdOutlineVideoLibrary  />,
       },
     ],
   },
