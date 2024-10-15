@@ -3,10 +3,11 @@
   flex-direction: row; /* Organiza os elementos lado a lado */
   justify-content: center;
   align-items: flex-start;
-  padding: 20px;
-  background: linear-gradient(160deg, #0d1a2d, #132d46); /* Gradiente suave de azul escuro */
-  height: 95vh; /* Ajusta a altura para 95% da altura da viewport, para deixar visíveis as bordas arredondadas */
-  margin: 20px; /* Margem para não colar nas laterais da tela */
+  padding: 20px 0px 0px 0px;
+  margin: 20px 0px 0px 0px;
+  background-color: var(--bgSoft); /* Gradiente suave de azul escuro */
+
+  height: 95vh; /* Ajusta a altura para 95% da altura da viewport, para deixar visíveis as bordas arredondadas */ /* Margem para não colar nas laterais da tela */
   border-radius: 20px; /* Arredondamento das bordas */
   overflow: hidden; /* Garante que o conteúdo não transborde nas bordas arredondadas */
 }
