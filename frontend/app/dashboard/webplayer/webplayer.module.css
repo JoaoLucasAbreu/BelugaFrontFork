@@ -1,47 +1,47 @@
-.container {
-    display: flex;
-  }
-  
-  .menu {
-    flex: 1;
-    background-color: var(--bgSoft);
-    padding: 20px;
-    min-height: 100vh;
-  }
-  
-  .content {
-    flex: 4;
-    padding: 20px;
-  }
-  
-  .wrapper {
-    display: flex;  
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .main {
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    
-  }
-  
-  .cards {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  
-  .side {
-    flex: 1;
-  }
+.mainContent {
+  display: flex;
+  flex-direction: row; /* Organiza os elementos lado a lado */
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background: linear-gradient(160deg, #0d1a2d, #132d46); /* Gradiente suave de azul escuro */
+  height: 95vh; /* Ajusta a altura para 95% da altura da viewport, para deixar visíveis as bordas arredondadas */
+  margin: 20px; /* Margem para não colar nas laterais da tela */
+  border-radius: 20px; /* Arredondamento das bordas */
+  overflow: hidden; /* Garante que o conteúdo não transborde nas bordas arredondadas */
+}
 
-  .bg {
-    object-fit: none;
-    opacity: 0.1;
-    width: 80px;
-    height: 70px;
-    z-index: 0;
-  }
+.playerWrapper {
+  position: relative;
+  width: 60%; /* Ajuste para o player ocupar 60% da largura */
+  height: auto; /* Ajusta dinamicamente a altura */
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-right: 20px; /* Espaço entre o player e a lista de vídeos */
+}
+
+.videoList {
+  width: 35%; /* Ajuste para a lista de vídeos ocupar 35% da largura */
+  background-color: #3d3d3d;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.videoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #4a4a4a;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+.videoItem:hover {
+  background-color: #5a5a5a;
+}
