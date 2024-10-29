@@ -1,48 +1,112 @@
-.mainContent {
+.container {
   display: flex;
-  flex-direction: row; /* Organiza os elementos lado a lado */
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px 0px 0px 0px;
-  margin: 20px 0px 0px 0px;
-  background-color: var(--bgSoft); /* Gradiente suave de azul escuro */
+  gap: 20px;
+  padding: 20px;
+  background-color: #1a1f36; 
+  color: #fff;
+  height: 100vh;
+  box-sizing: border-box;
+}
 
-  height: 95vh; /* Ajusta a altura para 95% da altura da viewport, para deixar visíveis as bordas arredondadas */ /* Margem para não colar nas laterais da tela */
-  border-radius: 20px; /* Arredondamento das bordas */
-  overflow: hidden; /* Garante que o conteúdo não transborde nas bordas arredondadas */
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 50%;
 }
 
 .playerWrapper {
   position: relative;
-  width: 60%; /* Ajuste para o player ocupar 60% da largura */
-  height: auto; /* Ajusta dinamicamente a altura */
-  background-color: #000;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin-right: 20px; /* Espaço entre o player e a lista de vídeos */
+  width: 100%;
+  height: 100%;
+  background-color: #000; 
+  border-radius: 8px; 
+  overflow: hidden;
 }
 
-.videoList {
-  width: 35%; /* Ajuste para a lista de vídeos ocupar 35% da largura */
-  background-color: #3d3d3d;
-  border-radius: 10px;
-  padding: 10px;
+/* Tornando o vídeo responsivo para ocupar 100% do espaço */
+.playerWrapper > :global(.react-player) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 8px;
+  color: #ddd;
+}
+
+.chatSection {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  background-color: #222;
+  padding: 15px;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chatInput {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+}
+
+.chatBox {
+  height: 200px;
+  padding: 10px;
+  background-color: #2f2f33;
+  border-radius: 5px;
+  overflow-y: auto;
+  color: #ddd;
+}
+
+.rightSection {
+  width: 50%;
+  padding: 10px;
+  background-color: rgba(26, 31, 54, 0.9); 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.translateButton {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  background-color: #00A0E4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .videoItem {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 10px;
   padding: 10px;
-  background-color: #4a4a4a;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  color: #e0e0e0;
-  cursor: pointer;
+  background-color: #333;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  color: #ddd;
 }
 
-.videoItem:hover {
-  background-color: #5a5a5a;
+.videoCode, .videoTitle, .videoDuration, .videoLanguage {
+  flex: 1;
+}
+
+.addButton {
+  background-color: #00A0E4;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
