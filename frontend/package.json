@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "chart.js": "^4.4.4",
+    "ky": "^1.7.2",
     "next": "14.2.11",
     "next-auth": "^5.0.0-beta.22",
     "react": "^18",
