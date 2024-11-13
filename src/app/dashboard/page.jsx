@@ -8,9 +8,9 @@ import {getAllUsers} from "@/http/user";
 
 const Dashboard = async () => {
 
-    const user = await getAllUsers();
+   //const user = await getAllUsers();
 
-    console.log(user);
+    // console.log(user);
 
     return (
         <div className={styles.wrapper}>
