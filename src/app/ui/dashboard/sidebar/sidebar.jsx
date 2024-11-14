@@ -1,62 +1,57 @@
-import Image from "next/image";
-import MenuLink from "./menuLink/menuLink";
-import styles from "./sidebar.module.css";
-import {
-  MdDashboard,
-  MdOutlineVideoLibrary ,
-  MdAttachMoney,
-  MdWork,
-  MdAnalytics,
-  MdPeople,
-  MdOutlineSettings,
-  MdHelpCenter,
-  MdLogout,
-  MdKey,
-  MdLibraryBooks
-} from "react-icons/md";
+import Image from 'next/image'
+import { AiFillApi } from 'react-icons/ai'
+import { FaKey } from 'react-icons/fa'
+import { FiArrowUpRight } from 'react-icons/fi'
+import { MdHelpCenter, MdLogout, MdOutlineSettings } from 'react-icons/md'
+import { RiDashboard3Fill, RiVideoAddFill } from 'react-icons/ri'
+
+import { Button } from '@/components/ui/button'
+
+import MenuLink from './menuLink/menuLink'
+import styles from './sidebar.module.css'
 
 const menuItems = [
   {
-    title: "Pages",
+    title: 'Pages',
     list: [
       {
-        title: "Dashboard",
-        path: "/dashboard",
-        icon: <MdDashboard />,
+        title: 'Dashboard',
+        path: '/dashboard',
+        icon: <RiDashboard3Fill />,
       },
       {
-        title: "API",
-        path: "/dashboard/api",
-        icon: <MdLibraryBooks />,
+        title: 'API',
+        path: '/dashboard/api',
+        icon: <AiFillApi />,
       },
       {
-        title: "Chaves",
-        path: "/dashboard/chaves",
-        icon: <MdKey />,
+        title: 'Chaves',
+        path: '/dashboard/chaves',
+        icon: <FaKey />,
       },
       {
-        title: "WebPlayer",
-        path: "/dashboard/webplayer",
-        icon: <MdOutlineVideoLibrary  />,
+        title: 'Dub Sandbox',
+        path: '/dashboard/webplayer',
+        icon: <RiVideoAddFill />,
       },
     ],
   },
   {
-    title: "User",
+    title: 'User',
     list: [
       {
-        title: "Settings",
-        path: "/dashboard/settings",
+        title: 'Settings',
+        path: '/dashboard/settings',
         icon: <MdOutlineSettings />,
       },
       {
-        title: "Help",
-        path: "/dashboard/help",
+        title: 'Help',
+        path: '/dashboard/help',
         icon: <MdHelpCenter />,
       },
     ],
   },
-];
+]
 
 const Sidebar = async () => {
   return (
@@ -64,7 +59,7 @@ const Sidebar = async () => {
       <div className={styles.beluga}>
         <Image
           className={styles.belugaImage}
-          src={"/beluga-white 1.png"}
+          src={'/beluga-white 1.png'}
           alt=""
           width="60"
           height="50"
@@ -77,7 +72,7 @@ const Sidebar = async () => {
       <div className={styles.user}>
         <Image
           className={styles.userImage}
-          src={"/noavatar.png"}
+          src={'/noavatar.png'}
           alt=""
           width="50"
           height="50"
@@ -99,18 +94,22 @@ const Sidebar = async () => {
       </ul>
       <form
         action={async () => {
-          "use server";
-          await signOut();
+          'use server'
+          // eslint-disable-next-line no-undef
+          await signOut()
         }}
       >
         <button className={styles.logout}>
           <MdLogout />
           Logout
         </button>
+        <Button className="bg-teal-900 text-teal-200 p-5 pt-7 pb-7 rounded-lg">
+          Compre créditos
+          <FiArrowUpRight />
+        </Button>
       </form>
-
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar
