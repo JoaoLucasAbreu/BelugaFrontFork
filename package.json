@@ -11,6 +11,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.1.1",
     "@emotion/react": "^11.13.3",
+    "@tanstack/react-query": "^5.60.5",
     "chart.js": "^4.4.4",
     "ky": "^1.7.2",
     "next": "14.2.11",
@@ -20,12 +21,15 @@
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
+    "react-hook-form": "^7.53.2",
     "react-icons": "^4.12.0",
     "react-player": "^2.16.0",
     "recharts": "^2.12.7"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
+    "@types/node": "22.9.0",
+    "@types/react": "18.3.12",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.11",
