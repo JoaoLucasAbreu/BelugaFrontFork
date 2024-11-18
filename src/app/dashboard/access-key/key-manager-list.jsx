@@ -2,18 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 
-import { getAllAccessKeysByUser } from '@/http/access-key'
-
-// Função para gerar chaves aleatórias (sequências de números e letras)
-const generateKey = () => {
-  const characters =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-  let key = ''
-  for (let i = 0; i < 16; i++) {
-    key += characters.charAt(Math.floor(Math.random() * characters.length))
-  }
-  return key
-}
+import { deleteAccessKey } from '@/http/access-key'
 
 const KeyItem = ({ keyItem, onDelete, onToggleVisibility }) => {
   return (
@@ -57,7 +46,7 @@ const KeyItem = ({ keyItem, onDelete, onToggleVisibility }) => {
   )
 }
 
-export function KeyManagerList({ AccessKeys }) {
+export function KeyManagerList({ AccessKeys, refetch }) {
   const [keys, setKeys] = useState(
     AccessKeys.map((k) => ({ ...k, visible: false })) ?? [],
   )
@@ -66,23 +55,14 @@ export function KeyManagerList({ AccessKeys }) {
     setKeys(AccessKeys.map((k) => ({ ...k, visible: false })) ?? [])
   }, [AccessKeys])
 
-  // const fetchKeys = async () => {
-  //   const result = await getAllAccessKeysByUser(
-  //     'f66438cd-7098-4999-81cd-8c99a0989606',
-  //   )
-  //   setKeys(result.result || []) // Supondo que `result.result` contenha as chaves
-  // }
-  //
-  // fetchKeys()
-
-  // const addKey = () => {
-  //   setKeys([...keys, { key: generateKey(), visible: false }])
-  // }
-  //
-  // const deleteKey = (index) => {
-  //   const newKeys = keys.filter((_, i) => i !== index)
-  //   setKeys(newKeys)
-  // }
+  const onDelete = async (id) => {
+    try {
+      await deleteAccessKey(id)
+      refetch()
+    } catch (error) {
+      alert('Erro de rede: ' + error.message)
+    }
+  }
 
   const toggleVisibility = (index) => {
     const newKeys = keys.map((item, i) =>
@@ -97,7 +77,7 @@ export function KeyManagerList({ AccessKeys }) {
         <KeyItem
           key={index}
           keyItem={keyItem}
-          // onDelete={() => deleteKey(index)}
+          onDelete={() => onDelete(keyItem.id)}
           onToggleVisibility={() => toggleVisibility(index)}
         />
       ))}

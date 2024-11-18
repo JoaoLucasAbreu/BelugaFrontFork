@@ -4,8 +4,8 @@ import { HStack } from '@chakra-ui/react'
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 
-import { AddKeyButton } from '@/app/dashboard/chaves/add-key-button'
-import { KeyManagerList } from '@/app/dashboard/chaves/key-manager-list'
+import { AddKeyButton } from '@/app/dashboard/access-key/add-key-button'
+import { KeyManagerList } from '@/app/dashboard/access-key/key-manager-list'
 import { getAllAccessKeysByUser } from '@/http/access-key'
 
 export default function Page() {
@@ -31,7 +31,7 @@ export default function Page() {
           <AddKeyButton refetch={refetch} />
         </HStack>
 
-        <KeyManagerList AccessKeys={data ?? []} />
+        <KeyManagerList AccessKeys={data ?? []} refetch={refetch} />
       </div>
     </div>
   )

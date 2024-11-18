@@ -26,7 +26,7 @@ const menuItems = [
       },
       {
         title: 'Chaves',
-        path: '/dashboard/chaves',
+        path: '/dashboard/access-key',
         icon: <FaKey />,
       },
       {

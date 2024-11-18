@@ -20,3 +20,9 @@ export async function addAccessKey(userId) {
 
   return response.json()
 }
+
+export async function deleteAccessKey(id) {
+  const response = await api.delete(`api/access_key/${id}`)
+
+  return response.json()
+}
