@@ -7,8 +7,6 @@ import { FaPlay } from 'react-icons/fa'
 import styles from './webplayer.module.css'
 
 export const VideoList = () => {
-  // const [currentVideo, setCurrentVideo] = useState('/videos/aula_1.mp4') // Exemplo de vídeo local
-
   const videos = [
     {
       id: '1',
@@ -38,11 +36,7 @@ export const VideoList = () => {
   // }
 
   return (
-    <div class="w-1/2 p-4 gap-2.5 bg-neutral-800 rounded-lg shadow-md">
-      <h3>Meus Vídeos</h3>
-      <button className="block my-2.5 px-5 py-4 rounded-lg bg-cyan-900 text-cyan-200 border-none cursor-pointer">
-        + Traduzir Vídeo
-      </button>
+    <>
       {videos.map((video) => (
         <div
           key={video.id}
@@ -59,6 +53,6 @@ export const VideoList = () => {
           </IconButton>
         </div>
       ))}
-    </div>
+    </>
   )
 }
