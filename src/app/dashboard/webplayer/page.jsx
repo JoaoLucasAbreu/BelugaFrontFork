@@ -23,12 +23,13 @@ export default function Page() {
 
   return (
     <>
-      <div class="flex mt-5  gap-5 h-screen box-border">
+      <div className="flex mt-5 gap-5 h-screen box-border">
         <div className={styles.leftSection}>
+          {/* <div> */}
           <VideoPlayer />
           <ChatBox />
         </div>
-        <div class="w-1/2 p-4 gap-2.5 bg-neutral-800 rounded-lg shadow-md">
+        <div className="w-1/2 p-4 gap-2.5 bg-neutral-800 rounded-lg shadow-md">
           <h3>Meus Vídeos</h3>
           <button
             onClick={() => setOpenModal(true)}

@@ -40,7 +40,7 @@ export const VideoList = () => {
       {videos.map((video) => (
         <div
           key={video.id}
-          class="flex items-center mt-2.5 p-2.5 bg-neutral-700 rounded-md mb-1 text-neutral-300"
+          className="flex items-center mt-2.5 p-2.5 bg-neutral-700 rounded-md mb-1 text-neutral-300"
           // onClick={() => handleVideoChange(video.path)}
         >
           <span className={styles.videoCode}>{video.id}</span>

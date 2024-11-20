@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player'
 
 export const VideoPlayer = () => {
   return (
-    <div class="relative w-full bg-black rounded-lg overflow-hidden aspect-video">
+    <div className="relative w-full bg-black rounded-lg overflow-hidden aspect-video">
       <ReactPlayer
         url={'/videos/aula_1.mp4'}
         width="100%"
