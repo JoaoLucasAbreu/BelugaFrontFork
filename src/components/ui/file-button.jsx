@@ -1,11 +1,4 @@
-function _nullishCoalesce(lhs, rhsFn) {
-  if (lhs != null) {
-    return lhs
-  } else {
-    return rhsFn()
-  }
-}
-;('use client')
+'use client'
 
 import {
   Button,
@@ -20,6 +13,13 @@ import {
 import { forwardRef } from 'react'
 import { LuFile, LuUpload, LuX } from 'react-icons/lu'
 
+function _nullishCoalesce(lhs, rhsFn) {
+  if (lhs != null) {
+    return lhs
+  } else {
+    return rhsFn()
+  }
+}
 export const FileUploadRoot = forwardRef(function FileUploadRoot(props, ref) {
   const { children, inputProps, ...rest } = props
   return (
@@ -35,12 +35,12 @@ export const FileUploadDropzone = forwardRef(
     const { children, label, description, ...rest } = props
     return (
       <ChakraFileUpload.Dropzone ref={ref} {...rest}>
-        <Icon fontSize='xl' color='fg.muted'>
+        <Icon fontSize="xl" color="fg.muted">
           <LuUpload />
         </Icon>
         <ChakraFileUpload.DropzoneContent>
           <div>{label}</div>
-          {description && <Text color='fg.muted'>{description}</Text>}
+          {description && <Text color="fg.muted">{description}</Text>}
         </ChakraFileUpload.DropzoneContent>
         {children}
       </ChakraFileUpload.Dropzone>
@@ -53,7 +53,7 @@ const FileUploadItem = (props) => {
   return (
     <ChakraFileUpload.Item file={file}>
       <ChakraFileUpload.ItemPreview asChild>
-        <Icon fontSize='lg' color='fg.muted'>
+        <Icon fontSize="lg" color="fg.muted">
           <LuFile />
         </Icon>
       </ChakraFileUpload.ItemPreview>
@@ -64,12 +64,12 @@ const FileUploadItem = (props) => {
           <ChakraFileUpload.ItemSizeText />
         </ChakraFileUpload.ItemContent>
       ) : (
-        <ChakraFileUpload.ItemName flex='1' />
+        <ChakraFileUpload.ItemName flex="1" />
       )}
 
       {clearable && (
         <ChakraFileUpload.ItemDeleteTrigger asChild>
-          <IconButton variant='ghost' color='fg.muted' size='xs'>
+          <IconButton variant="ghost" color="fg.muted" size="xs">
             <LuX />
           </IconButton>
         </ChakraFileUpload.ItemDeleteTrigger>
@@ -108,7 +108,7 @@ export const FileInput = forwardRef(function FileInput(props, ref) {
     <ChakraFileUpload.Trigger asChild>
       <Button
         unstyled
-        py='0'
+        py="0"
         ref={ref}
         {...rest}
         css={[inputRecipe(recipeProps), props.css]}
@@ -121,7 +121,7 @@ export const FileInput = forwardRef(function FileInput(props, ref) {
             if (acceptedFiles.length > 1) {
               return <span>{acceptedFiles.length} files</span>
             }
-            return <Span color='fg.subtle'>{placeholder}</Span>
+            return <Span color="fg.subtle">{placeholder}</Span>
           }}
         </ChakraFileUpload.Context>
       </Button>

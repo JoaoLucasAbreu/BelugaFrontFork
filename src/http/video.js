@@ -7,3 +7,15 @@ export async function getAllVideosByUser(userId) {
 
   return data.result
 }
+
+export async function addVideo(formData) {
+  const response = await api.post(`api/video`, {
+    body: formData,
+    headers: {
+      Accept: 'application/json',
+    },
+  })
+
+  const data = await response.json()
+  return data.result
+}

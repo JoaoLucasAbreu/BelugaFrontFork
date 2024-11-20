@@ -1,7 +1,7 @@
 'use client'
 
 import { useQuery } from '@tanstack/react-query'
-import React from 'react'
+import React, { useState } from 'react'
 
 import { ChatBox } from '@/app/dashboard/webplayer/chatbox'
 import { VideoList } from '@/app/dashboard/webplayer/video-list'
@@ -9,22 +9,39 @@ import { VideoPlayer } from '@/app/dashboard/webplayer/video-player'
 import styles from '@/app/dashboard/webplayer/webplayer.module.css'
 import { getAllVideosByUser } from '@/http/video'
 
+import { VideoUploaderModal } from './video-uploader-modal'
+
 export default function Page() {
   const { data } = useQuery({
     queryKey: ['videos'],
     queryFn: () => getAllVideosByUser('f66438cd-7098-4999-81cd-8c99a0989606'),
   })
 
+  const [openModal, setOpenModal] = useState(false)
+
   console.log(data)
 
   return (
-    <div class="flex mt-5  gap-5 h-screen box-border">
-      <div className={styles.leftSection}>
-        <VideoPlayer />
-        <ChatBox />
+    <>
+      <div className="flex mt-5 gap-5 h-screen box-border">
+        <div className={styles.leftSection}>
+          {/* <div> */}
+          <VideoPlayer />
+          <ChatBox />
+        </div>
+        <div className="w-1/2 p-4 gap-2.5 bg-neutral-800 rounded-lg shadow-md">
+          <h3>Meus Vídeos</h3>
+          <button
+            onClick={() => setOpenModal(true)}
+            className="block my-2.5 px-5 py-4 rounded-lg bg-cyan-900 text-cyan-200 border-none cursor-pointer"
+          >
+            + Traduzir Vídeo
+          </button>
+          <VideoList />
+        </div>
       </div>
-      <VideoList />
-    </div>
+      <VideoUploaderModal open={openModal} setOpen={setOpenModal} />
+    </>
   )
 
   // return (
