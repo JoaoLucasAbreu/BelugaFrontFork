@@ -16,3 +16,8 @@ export function getLanguageCodeByFlag(flag) {
 
   return languageCode || null // Retorna null se não encontrar
 }
+
+export function getFlagByLanguageCode(code) {
+  // Retorna a flag correspondente ao código de idioma
+  return LanguageFlagEnum[code] || null // Retorna null se não encontrar
+}

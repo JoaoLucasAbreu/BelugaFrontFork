@@ -2,13 +2,11 @@ import { HStack, Icon, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { FaArrowRight } from 'react-icons/fa'
-import { FiArrowUpRight } from 'react-icons/fi'
 import { RiVideoAddFill } from 'react-icons/ri'
 import { toast } from 'sonner'
 
 import { Button } from '@/components/ui/button'
 import {
-  DialogActionTrigger,
   DialogBody,
   DialogCloseTrigger,
   DialogContent,
@@ -25,7 +23,7 @@ import {
 import { addVideo } from '@/http/video'
 import { getLanguageCodeByFlag } from '@/utils/enum/flags'
 
-export const VideoUploaderModal = ({ open, setOpen }) => {
+export const VideoUploaderModal = ({ open, setOpen, refecth }) => {
   const languages = ['🇧🇷', '🇺🇸', '🇪🇸', '🇫🇷', '🇩🇪', '🇮🇹', '🇯🇵']
 
   const { register, handleSubmit, setValue } = useForm()
@@ -54,6 +52,8 @@ export const VideoUploaderModal = ({ open, setOpen }) => {
 
       await addVideo(formData)
       toast.success('Video enviado para tradução!')
+      refecth()
+      setOpen(false)
     } catch (error) {
       alert('Erro de rede: ' + error.message)
     }
