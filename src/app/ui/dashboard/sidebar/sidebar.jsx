@@ -21,7 +21,7 @@ const menuItems = [
       },
       {
         title: 'API',
-        path: '/dashboard/api',
+        path: '/dashboard/development',
         icon: <AiFillApi />,
       },
       {

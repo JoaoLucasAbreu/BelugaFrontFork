@@ -14,7 +14,7 @@ import { VideoUploaderModal } from './video-uploader-modal'
 
 export default function Page() {
   const [videoTranslation, setVideoTranslation] = useState(null)
-  const [assistant, setAssistant] = useState(null)
+  const [assistantId, setAssistantId] = useState(null)
   const [videoList, setVideoList] = useState([])
 
   const { data, refetch } = useQuery({
@@ -31,8 +31,8 @@ export default function Page() {
     <>
       <div className="flex mt-5 gap-5 h-screen box-border">
         <div className="flex flex-col gap-[15px] w-2/5">
-          <VideoPlayer />
-          <ChatBox />
+          <VideoPlayer video={videoTranslation} />
+          <ChatBox assistantId={assistantId} />
         </div>
         <div className="w-3/5 p-4 gap-2.5 bg-neutral-800 rounded-lg shadow-md">
           <Text className="text-2xl font-semibold mb-5">Meus vídeos</Text>
@@ -45,7 +45,7 @@ export default function Page() {
           <VideoList
             videos={data ?? []}
             setVideoTranslation={setVideoTranslation}
-            setAssistant={setAssistant}
+            setAssistantId={setAssistantId}
           />
         </div>
       </div>

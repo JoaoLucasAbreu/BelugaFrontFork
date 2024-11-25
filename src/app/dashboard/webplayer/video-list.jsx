@@ -17,7 +17,7 @@ import {
 } from '@/components/ui/accordion'
 import { getFlagByLanguageCode } from '@/utils/enum/flags'
 
-export const VideoList = ({ videos, setVideoTranslation, setAssistant }) => {
+export const VideoList = ({ videos, setVideoTranslation, setAssistantId }) => {
   //
   // const handleVideoChange = (path) => {
   //   setCurrentVideo(path)
@@ -76,7 +76,7 @@ export const VideoList = ({ videos, setVideoTranslation, setAssistant }) => {
                     <IconButton
                       onClick={() => {
                         setVideoTranslation(translation.translationUrl)
-                        setAssistant(video.assistantExternalId)
+                        setAssistantId(video.assistantExternalId)
                       }}
                       className="bg-cyan-900 text-cyan-200 p-5 pt-7 pb-7 rounded-lg"
                     >
