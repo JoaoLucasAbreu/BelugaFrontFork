@@ -23,7 +23,7 @@ export const VideoList = ({ videos, setVideoTranslation, setAssistantId }) => {
   //   setCurrentVideo(path)
   // }
 
-  console.log('uploader', videos)
+  console.log('video-list', videos)
 
   return (
     <>
@@ -70,10 +70,14 @@ export const VideoList = ({ videos, setVideoTranslation, setAssistantId }) => {
                   <span>{translation.created}</span>
 
                   <HStack>
-                    <IconButton className="bg-cyan-900 text-cyan-200 p-5 pt-7 pb-7 rounded-lg">
+                    <IconButton
+                      disabled={translation.status !== 'COMPLETED'}
+                      className="bg-cyan-900 text-cyan-200 p-5 pt-7 pb-7 rounded-lg"
+                    >
                       <IoMdDownload className="h-5" />
                     </IconButton>
                     <IconButton
+                      disabled={translation.status !== 'COMPLETED'}
                       onClick={() => {
                         setVideoTranslation(translation.translationUrl)
                         setAssistantId(video.assistantExternalId)

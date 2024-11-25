@@ -20,6 +20,7 @@ export default function Page() {
   const { data, refetch } = useQuery({
     queryKey: ['videos'],
     queryFn: () => getAllVideosByUser('f66438cd-7098-4999-81cd-8c99a0989606'),
+    refetchInterval: 5000,
   })
 
   const [openModal, setOpenModal] = useState(false)
