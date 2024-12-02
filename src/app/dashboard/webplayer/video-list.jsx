@@ -1,8 +1,6 @@
 'use client'
 
-import { Badge, Box, HStack, IconButton, Spacer } from '@chakra-ui/react'
-import { parseISO } from 'date-fns'
-import { format, utcToZonedTime } from 'date-fns-tz'
+import { Badge, Box, HStack, IconButton } from '@chakra-ui/react'
 import React from 'react'
 import { FaCheck, FaPlay, FaPlus } from 'react-icons/fa'
 import { FaRegCircleDot } from 'react-icons/fa6'
@@ -16,6 +14,7 @@ import {
   AccordionRoot,
 } from '@/components/ui/accordion'
 import { getFlagByLanguageCode } from '@/utils/enum/flags'
+import { formatDate } from '@/utils/formatters/format-date'
 
 export const VideoList = ({ videos, setVideoTranslation, setAssistantId }) => {
   //
@@ -24,6 +23,7 @@ export const VideoList = ({ videos, setVideoTranslation, setAssistantId }) => {
   // }
 
   console.log('video-list', videos)
+  console.log('time zone', Intl.DateTimeFormat().resolvedOptions().timeZone)
 
   return (
     <>
@@ -36,20 +36,17 @@ export const VideoList = ({ videos, setVideoTranslation, setAssistantId }) => {
             >
               <AccordionItemTrigger indicatorPlacement="start">
                 <HStack justifyContent="space-between" w="100%" spacing={0}>
-                  <span>{video.originalName}</span>
-                  <span className="text-2xl">
-                    {getFlagByLanguageCode(video.originalLanguage)}
-                  </span>
-                  <span>
-                    {/* {format( */}
-                    {/*  utcToZonedTime( */}
-                    {/*    parseISO(video.created), */}
-                    {/*    Intl.DateTimeFormat().resolvedOptions().timeZone, */}
-                    {/*  ), */}
-                    {/*  'dd/MM/yyyy HH:mm', */}
-                    {/* )} */}
-                    {video.created}
-                  </span>
+                  <div className="w-1/2">
+                    <span>{video.originalName}</span>
+                  </div>
+                  <div className="w-1/2">
+                    <span className="text-2xl">
+                      {getFlagByLanguageCode(video.originalLanguage)}
+                    </span>
+                  </div>
+                  <div className="w-1/2">
+                    <span>{formatDate(video.created)}</span>
+                  </div>
                   <IconButton className="bg-cyan-900 text-cyan-200 p-5 pt-7 pb-7 rounded-lg">
                     <FaPlus className="h-3.5" />
                   </IconButton>
@@ -63,11 +60,17 @@ export const VideoList = ({ videos, setVideoTranslation, setAssistantId }) => {
                   justifyContent="space-between"
                   className="flex items-center mt-0.5 py-2 px-2.5 bg-neutral-700 rounded-md mb-1 text-neutral-300"
                 >
-                  <span className="text-2xl">
-                    {getFlagByLanguageCode(translation.language)}
-                  </span>
-                  <ProgressBadge status={translation.status} />
-                  <span>{translation.created}</span>
+                  <div className="w-1/2">
+                    <span className="text-2xl">
+                      {getFlagByLanguageCode(translation.language)}
+                    </span>
+                  </div>
+                  <div className="w-1/2">
+                    <ProgressBadge status={translation.status} />
+                  </div>
+                  <div className="w-1/2">
+                    <span>{formatDate(translation.created)}</span>
+                  </div>
 
                   <HStack>
                     <IconButton

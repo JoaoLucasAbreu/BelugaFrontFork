@@ -12,7 +12,7 @@ import styles from './sidebar.module.css'
 
 const menuItems = [
   {
-    title: 'Pages',
+    title: 'Abas',
     list: [
       {
         title: 'Dashboard',
@@ -20,14 +20,14 @@ const menuItems = [
         icon: <RiDashboard3Fill />,
       },
       {
-        title: 'API',
-        path: '/dashboard/development',
-        icon: <AiFillApi />,
-      },
-      {
-        title: 'Chaves',
+        title: 'Chaves de Acesso',
         path: '/dashboard/access-key',
         icon: <FaKey />,
+      },
+      {
+        title: 'API e Documentação',
+        path: '/dashboard/development',
+        icon: <AiFillApi />,
       },
       {
         title: 'Dub Sandbox',
@@ -37,15 +37,15 @@ const menuItems = [
     ],
   },
   {
-    title: 'User',
+    title: 'Menu',
     list: [
       {
-        title: 'Settings',
+        title: 'Configurações',
         path: '/dashboard/settings',
         icon: <MdOutlineSettings />,
       },
       {
-        title: 'Help',
+        title: 'Ajuda',
         path: '/dashboard/help',
         icon: <MdHelpCenter />,
       },
@@ -101,7 +101,7 @@ const Sidebar = async () => {
       >
         <button className={styles.logout}>
           <MdLogout />
-          Logout
+          Sair
         </button>
         <Button className="bg-teal-900 text-teal-200 p-5 pt-7 pb-7 rounded-lg">
           Compre créditos

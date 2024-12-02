@@ -1,6 +1,5 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { FiArrowUpRight } from 'react-icons/fi'
 
 import { Button } from '@/components/ui/button'
 import { addAccessKey } from '@/http/access-key'
@@ -23,7 +22,6 @@ export function AddKeyButton({ refetch }) {
       onClick={handleSubmit(onSubmit)}
     >
       + Adicionar chave
-      <FiArrowUpRight />
     </Button>
   )
 }
