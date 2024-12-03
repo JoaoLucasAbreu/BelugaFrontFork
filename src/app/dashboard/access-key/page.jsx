@@ -1,6 +1,6 @@
 'use client'
 
-import { HStack } from '@chakra-ui/react'
+import { HStack, Text } from '@chakra-ui/react'
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 
@@ -24,10 +24,10 @@ export default function Page() {
           borderRadius: '10px',
         }}
       >
-        <HStack justify="space-between">
-          <h1 style={{ marginBottom: '30px', padding: '20px 2px' }}>
+        <HStack justify="space-between" className="mb-3">
+          <Text className="text-2xl font-semibold mb-5">
             Gerenciamento de Chaves
-          </h1>
+          </Text>
           <AddKeyButton refetch={refetch} />
         </HStack>
 

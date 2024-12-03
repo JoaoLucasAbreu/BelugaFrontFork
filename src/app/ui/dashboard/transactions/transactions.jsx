@@ -1,5 +1,7 @@
-import Image from "next/image";
-import styles from "./transactions.module.css";
+import { Badge } from '@chakra-ui/react'
+import Image from 'next/image'
+
+import styles from './transactions.module.css'
 
 const Transactions = () => {
   return (
@@ -29,9 +31,9 @@ const Transactions = () => {
               </div>
             </td>
             <td>
-              <span className={`${styles.status} ${styles.pending}`}>
+              <Badge p={2} colorPalette="yellow">
                 Pending
-              </span>
+              </Badge>
             </td>
             <td>14.02.2024</td>
             <td>$3.200</td>
@@ -100,7 +102,7 @@ const Transactions = () => {
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default Transactions;
+export default Transactions

@@ -4,7 +4,7 @@
   }
   
   .item {
-    background: linear-gradient(to top, #182237, #253352);
+    background: linear-gradient(to top, #182237, #164e63);
     padding: 20px 24px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -53,8 +53,8 @@
     align-items: center;
     gap: 10px;
     width: max-content;
-    background-color: #5d57c9;
-    color: white;
+    background-color: #125650;
+    color: rgb(153, 246, 228);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -77,7 +77,8 @@
 .userItem {
   display: flex;
   align-items: center;
-  background-color: #2f3a53;
+  background-color: #125650;
+  color: rgb(153, 246, 228);
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -87,7 +88,7 @@
 .userImageContainer {
   border-radius: 20%;
   padding: 1px 1px 0px 1px;
-  background: #142346;
+  background: rgb(153, 246, 228);
 }
 
 .userImage {

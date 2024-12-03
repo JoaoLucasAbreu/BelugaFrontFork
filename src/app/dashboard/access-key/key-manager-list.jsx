@@ -1,6 +1,9 @@
 'use client'
 
+import { IconButton } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
+import { FaEye, FaEyeSlash, FaRobot } from 'react-icons/fa'
+import { MdDelete } from 'react-icons/md'
 
 import { deleteAccessKey } from '@/http/access-key'
 
@@ -16,32 +19,31 @@ const KeyItem = ({ keyItem, onDelete, onToggleVisibility }) => {
         marginBottom: '10px',
       }}
     >
-      <span style={{ flexGrow: 1, color: '#fff' }}>
+      <span className="font-semibold" style={{ flexGrow: 1, color: '#fff' }}>
         {keyItem.visible ? keyItem.key : '••••••••••••••••'}
       </span>
-      <button
-        onClick={onToggleVisibility}
-        style={{
-          marginRight: '10px',
-          background: 'transparent',
-          border: 'none',
-          cursor: 'pointer',
-          color: '#fff',
-        }}
-      >
-        {keyItem.visible ? '👁️' : '🙈'}
-      </button>
-      <button
+      {keyItem.visible ? (
+        <IconButton
+          onClick={onToggleVisibility}
+          className="bg-teal-900 text-teal-200 mr-2 p-3  rounded-md"
+        >
+          <FaEye />
+        </IconButton>
+      ) : (
+        <IconButton
+          onClick={onToggleVisibility}
+          className="bg-teal-900 text-teal-200 mr-2 p-3  rounded-md"
+        >
+          <FaEyeSlash />
+        </IconButton>
+      )}
+
+      <IconButton
         onClick={onDelete}
-        style={{
-          background: 'transparent',
-          border: 'none',
-          cursor: 'pointer',
-          color: '#fff',
-        }}
+        className="bg-teal-900 text-teal-200 mr-2 p-3  rounded-md"
       >
-        🗑️
-      </button>
+        <MdDelete />
+      </IconButton>
     </div>
   )
 }

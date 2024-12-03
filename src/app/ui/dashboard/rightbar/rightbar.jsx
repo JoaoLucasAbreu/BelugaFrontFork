@@ -1,9 +1,5 @@
 import Image from 'next/image'
-import {
-  MdOutlinePersonOutline,
-  MdPlayCircleFilled,
-  MdReadMore,
-} from 'react-icons/md'
+import { MdOutlinePersonOutline, MdPlayCircleFilled } from 'react-icons/md'
 
 import styles from './rightbar.module.css'
 
